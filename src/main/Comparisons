@@ -1,0 +1,23 @@
+                10^3   10^4  10^5
+MyLock          0.013  0.283 21.221
+MyMutex         0.003  0.005 0.025
+ReentrantLock   0.003  0.005 0.020
+
+ADD
+MyList          0.003  0.095 5.915
+Synch           0.000  0.001 0.004
+CopyOn          0.002  0.067 5.678
+
+//Quicker, as array of new size -> memory shenanigans
+SET
+MyList          0.002  0.004 0.014
+Synch           0.001  0.001 0.006
+CopyOn          0.000  0.001 0.007
+
+GET             10^6   10^7
+MyList          0.007 0.012
+Synch           0.027 0.312
+CopyOn          0.004 0.011
+
+
+There is no CopyOnWriteMap, as reading is same performance and writing would be slower, as keys are independent.
